@@ -30,17 +30,17 @@ See details in http://madgraph.hep.uiuc.edu/EXAMPLES/Cards/proc_card_4.dat on Ma
 
 Edit the file <code>pp_to_Higgs_HEFT_Model/Cards/proc_card.dat</code>:
 
-> <br><code>pp>h  @1           # First Process</code>
+> <code>pp>h  @1           # First Process</code>
 > <br><code>QCD=99             # Max QCD couplings</code>
 > <br><code>QED=0              # Max QED couplings</code>
 > <br><code>HIG=1              # Max HIGGS EFT coupling: (now max is 1)</code>
 > <br><code>end_coup           # End the couplings input</code>
 
-NOTE: Don't forget to specify choice of model. In our test case it is heft:
+NOTE: Don't forget to specify choice of model. In our test case it is <code>heft</code>:
 
-<code># Begin MODEL  # This is TAG. Do not modify this line</code>
-<br><code>heft</code>
-<br><code># End   MODEL  # This is TAG. Do not modify this line</code>
+> <code># Begin MODEL  # This is TAG. Do not modify this line</code>
+> <br><code>heft</code>
+> <br><code># End   MODEL  # This is TAG. Do not modify this line</code>
 
 ### 1.6. Setup the specified process
 
