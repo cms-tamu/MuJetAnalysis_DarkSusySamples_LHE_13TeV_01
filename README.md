@@ -243,33 +243,34 @@ NOTE: param_card.dat was updated with new decay widths:
 
 The program asks a few following questions:
 
-Would you like to run from a MadGraph Model directory? (Y/N) Y
+<code>Would you like to run from a MadGraph Model directory? (Y/N) Y</code>
 
-What is the name of the model directory(assuming that it is a subdirectory of Models/):
+<code>What is the name of the model directory(assuming that it is a subdirectory of Models/):</code>
+<code>usrmod_DarkSusy_mH_125</code>
 
-usrmod_DarkSusy_mH_125
+<code>What is the name of the input event file(include path if directory is different from where DGE is running)?</code>
+<code>[FUL PATH]/MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe</code>
 
-What is the name of the input event file(include path if directory is different from where DGE is running)? 
+<code>What is the name of the output event file(include path if directory is different from where DGE is running)?</code>
+<code>ggToHiggsTo2n1To2nD2aD_mH_125_13TeV_madgraph452_bridge224_events80k.lhe</code>
 
-/home/pakhotin/Work/CMS_My_Physics_Analyses/2013-01-23_DarkSUSY_MC_13TeV/MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe
+<code>Please enter a random number seed or write 'time' to use the time</code>
+<code>12345/<code>
 
-What is the name of the output event file(include path if directory is different from where DGE is running)? 
-
-ggToHiggsTo2n1To2nD2aD_mH_125_13TeV_madgraph452_bridge224_events80k.lhe
-
-Please enter a random number seed or write 'time' to use the time
-12345
-
+<code>
 Choose a mode: 
   1. Decay a particular particle.
   2. Decay down to a set of final-state particles.
   3. Decay using a specified set of decay modes.
 Which mode? 2
+</code>
 
+<code>
 Choose an input method: 
   1. Read a file listing final-state particles.
   2. Enter the list of final-state particles manually.
 Which mode? 2
+</code>
 
 NOTE: In this test example we want to decay particles to mu+mu- final states according to branching ratios.
 
@@ -295,4 +296,4 @@ What file name do you want to save to? ggToHiggsTo2n1To2nD2aD_mH_125_ListFinalSt
 
 ### 5.2. Finally, we need to change our custom massive muon "mu1" to regular "mu".
 
-Just search for codes "3000013" and "-3000013" in event file "test_out.lhe" and replace them with codes "13" and "-13".
+Just search for codes <code>3000013</code> and <code>-3000013</code> in event file <code>test_out.lhe</code> and replace them with codes <code>13</code> and <code>-13</code>.
