@@ -185,20 +185,20 @@ Edit file <code>Models/usrmod_DarkSusy_mH_125/param_card.dat</code>
 2. Set widths of stable particles n1 and mu1 set to 0
 3. Set Higgs width to 1 and remove branchings to SM particles
 
-> <code>        25     <font color="red">1.25000000E+02</font>   # H        mass</code>
-> <br><code>   3000001     1.00000000e+00   # MN1</code>
-> <br><code>   3000002     1.00000000e+01   # MN2</code>
-> <br><code>   3000022     4.00000000e-01   # MZD</code>
-> <br><code>   3000013     1.05000000e-01   # MMU1</code>
+> <code>        25     <b>1.25000000E+02</b>   # H        mass</code>
+> <br><code>   3000001     <b>1.00000000e+00</b>   # MN1</code>
+> <br><code>   3000002     <b>1.00000000e+01</b>   # MN2</code>
+> <br><code>   3000022     <b>4.00000000e-01</b>   # MZD</code>
+> <br><code>   3000013     <b>1.05000000e-01</b>   # MMU1</code>
 > <br><code>#            PDG       Width</code>
-> <br><code>DECAY   3000001     0.00000000e+00   # WN1</code>
-> <br><code>DECAY   3000002     1.00000000e+00   # WN2</code>
-> <br><code>DECAY   3000022     1.00000000e+00   # WZD</code>
-> <br><code>DECAY   3000013     0.00000000e+00   # WMU1</code>
+> <br><code>DECAY   3000001     <b>0.00000000e+00</b>   # WN1</code>
+> <br><code>DECAY   3000002     <b>1.00000000e+00</b>   # WN2</code>
+> <br><code>DECAY   3000022     <b>1.00000000e+00</b>   # WZD</code>
+> <br><code>DECAY   3000013     <b>0.00000000e+00</b>   # WMU1</code>
 > <br><code>DECAY         6     1.51013490E+00   # top width</code>
 > <br><code>DECAY        23     2.44639985E+00   # Z   width</code>
 > <br><code>DECAY        24     2.03535570E+00   # W   width</code>
-> <br><code>DECAY        25     1.00000000e+00   # H   width</code>
+> <br><code>DECAY        25     <b>1.00000000e+00</b>   # H   width</code>
 
 ### 3.7. Compile model and run
 
