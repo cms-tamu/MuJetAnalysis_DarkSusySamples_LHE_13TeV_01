@@ -239,7 +239,7 @@ NOTE: param_card.dat was updated with new decay widths:
 
 ### 5.1. Run BRIDGE
 
-./runDGE.exe
+<code>./runDGE.exe</code>
 
 The program asks a few following questions:
 
@@ -257,20 +257,16 @@ The program asks a few following questions:
 <code>Please enter a random number seed or write 'time' to use the time</code>
 <br><code>12345</code>
 
-<code>
-Choose a mode: 
-  1. Decay a particular particle.
-  2. Decay down to a set of final-state particles.
-  3. Decay using a specified set of decay modes.
-Which mode? 2
-</code>
+<code>Choose a mode:</code>
+<br><code>1. Decay a particular particle.</code>
+<br><code>2. Decay down to a set of final-state particles.</code>
+<br><code>3. Decay using a specified set of decay modes.</code>
+<br><code>Which mode? 2</code>
 
-<code>
-Choose an input method: 
-  1. Read a file listing final-state particles.
-  2. Enter the list of final-state particles manually.
-Which mode? 2
-</code>
+<code>Choose an input method:</code>
+<br><code>1. Read a file listing final-state particles.</code>
+<br><code>2. Enter the list of final-state particles manually.</code>
+<br><code>Which mode? 2</code>
 
 NOTE: In this test example we want to decay particles to mu+mu- final states according to branching ratios.
 
