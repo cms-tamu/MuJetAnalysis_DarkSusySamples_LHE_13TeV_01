@@ -98,7 +98,7 @@ This program asks 2 questions:
 
 Generated events are stored in file <code>MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz</code>
 
-Unzip this LHE file with generated <b>unweighted</b> events, it will be used in next steps.
+Unzip this LHE file with generated <b>unweighted</b> events, it will be used in next steps:
 
 <code>cd MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events</code>
 
@@ -114,22 +114,24 @@ Repeat generation for other masses of Higgs. Suggested run names:
 
 ## 3. Create custom Dark SUSY model
 
-In our example Higgs decays into two neutralinos n2 that decay into dark neutralino n1 (LSP) and dark photon zd. Dark photon decays into two muons.
+In our example Higgs decays into two neutralinos <code>n2</code> that decay into dark neutralino <code>n1</code> (LSP) and dark photon <code>zd</code>. Dark photon decays into two muons.
 
-### 3.1. Copy folder MG_ME_V4.5.2/Models/usrmod with custom user model to new folder:
+### 3.1. Create template for the model
 
-cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125
+Copy folder <code>MG_ME_V4.5.2/Models/usrmod</code> with custom user model to new folder:
+
+<code>cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125</code>
 
 ### 3.2. Edit Models/usrmod_DarkSusy_mH_125/particles.dat
 
- #MODEL EXTENSION
- n1      n1        F        S      MN1   WN1     S    n1   3000001
- n2      n2        F        S      MN2   WN2     S    n2   3000002
- zd      zd        V        W      MZD   WZD     S    zd   3000022
- mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013
- # END
+> <code> #MODEL EXTENSION
+> <br><code> n1      n1        F        S      MN1   WN1     S    n1   3000001</code>
+> <br><code> n2      n2        F        S      MN2   WN2     S    n2   3000002</code>
+> <br><code> zd      zd        V        W      MZD   WZD     S    zd   3000022</code>
+> <br><code> mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013</code>
+> <br><code> # END
 
-NOTE: Muon with new code 3000013 to make it massive
+NOTE: Muon with new code <code>3000013</code> to make it massive
 
 3.3. Edit Models/usrmod_DarkSusy_mH_125/interaction.dat
 
