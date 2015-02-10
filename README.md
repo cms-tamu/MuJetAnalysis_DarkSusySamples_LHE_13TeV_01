@@ -6,134 +6,134 @@
 
 ### 1.1. Download archive with pre-compiled Madgraph from github
 
-wget https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/MG_ME_V4.5.2_CompiledBackup/MG_ME_V4.5.2_CompiledBackup.tar.gz?raw=true -O MG_ME_V4.5.2_CompiledBackup.tar.gz
+`wget https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/MG_ME_V4.5.2_CompiledBackup/MG_ME_V4.5.2_CompiledBackup.tar.gz?raw=true -O MG_ME_V4.5.2_CompiledBackup.tar.gz`
 
 ### 1.2. Unzip and rename it to MG_ME_V4.5.2
 
-tar -xzf MG_ME_V4.5.2_CompiledBackup.tar.gz
+`tar -xzf MG_ME_V4.5.2_CompiledBackup.tar.gz`
 
-mv MG_ME_V4.5.2_CompiledBackup MG_ME_V4.5.2
+`mv MG_ME_V4.5.2_CompiledBackup MG_ME_V4.5.2`
 
 ### 1.3. Go to Madgraph folder:
 
-cd MG_ME_V4.5.2
+`cd MG_ME_V4.5.2`
 
 ### 1.4. Create template for the process
 
-Copy the Template directory to directory with new name, for example pp_to_Higgs_HEFT_Model, in order to keep a clean copy of the Template:
+Copy the `Template` directory to directory with new name, for example `pp_to_Higgs_HEFT_Model`, in order to keep a clean copy of the `Template`:
 
-cp -r Template pp_to_Higgs_HEFT_Model
+`cp -r Template pp_to_Higgs_HEFT_Model`
 
 ### 1.5. Set up process pp -> Higgs through a top loop
 
 See details in http://madgraph.hep.uiuc.edu/EXAMPLES/Cards/proc_card_4.dat on Madgraph web http://madgraph.hep.uiuc.edu/EXAMPLES/proc_card_examples.html
 
-Edit the file pp_to_Higgs_HEFT_Model/Cards/proc_card.dat:
+Edit the file `pp_to_Higgs_HEFT_Model/Cards/proc_card.dat`:
 
-> pp>h  @1           # First Process
-QCD=99             # Max QCD couplings
-QED=0              # Max QED couplings
-HIG=1              # Max HIGGS EFT coupling: (now max is 1)
-end_coup           # End the couplings input
+        pp>h  @1           # First Process
+        QCD=99             # Max QCD couplings
+        QED=0              # Max QED couplings
+        HIG=1              # Max HIGGS EFT coupling: (now max is 1)
+        end_coup           # End the couplings input
 
-NOTE: Don't forget to specify choice of model. In our test case it is heft:
+NOTE: Don't forget to specify choice of model. In our test case it is `heft`:
 
-> # Begin MODEL  # This is TAG. Do not modify this line
-heft
-# End   MODEL  # This is TAG. Do not modify this line
+        # Begin MODEL  # This is TAG. Do not modify this line
+        heft
+        # End   MODEL  # This is TAG. Do not modify this line
 
 ### 1.6. Setup the specified process
 
-cd pp_to_Higgs_HEFT_Model/bin
+`cd pp_to_Higgs_HEFT_Model/bin`
 
-./newprocess
+`./newprocess`
 
-NOTE: this will replace the file pp_to_Higgs_HEFT_Model/Cards/param_card.dat by the original param_card.dat for the model. In our case model is "heft", so the original file is MG_ME_V4.5.2/Models/heft/param_card.dat.
+NOTE: this will replace the file `pp_to_Higgs_HEFT_Model/Cards/param_card.dat` by the original `param_card.dat` for the model. In our case model is `heft`, so the original file is `MG_ME_V4.5.2/Models/heft/param_card.dat`.
 
 ### 1.7. Check the specified process
 
-Use your web browser, by looking at index.html in the pp_to_Higgs_HEFT_Model folder:
+Use your web browser, by looking at `index.html` in the `pp_to_Higgs_HEFT_Model` folder:
 
-firefox pp_to_Higgs_HEFT_Model/index.html
+`firefox pp_to_Higgs_HEFT_Model/index.html`
 
 ### 1.8. Specify the model parameters
 
-The model parameters include masses and widths for particles and coupling constants. They are defined in file param_card.dat in the MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Cards folder.
+The model parameters include masses and widths for particles and coupling constants. They are defined in file `param_card.dat` in the `MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Cards` folder.
 
 In our case adjust mass of Higgs to 125 GeV:
 
-> 25     1.25000000E+02   # H        mass
+        25     1.25000000E+02   # H        mass
 
 ## 2. Generate Higgs events with Madgraph
 
 ### 2.1. Set generation parameters
 
-Set beam type to protons, beam energy (6.5 TeV in this example), number of events and random seed in the file pp_to_Higgs_HEFT_Model/Cards/run_card.dat:
+Set beam type to protons, beam energy (6.5 TeV in this example), number of events (80k) and random seed in the file `pp_to_Higgs_HEFT_Model/Cards/run_card.dat`:
 
->  #*********************************************************************
-# Number of events and rnd seed                                      *
-#*********************************************************************
-    800000   = nevents ! Number of unweighted events requested 
-    1234     = iseed   ! rnd seed (0=assigned automatically=default))
-#*********************************************************************
-# Collider type and energy                                           *
-#*********************************************************************
-       1     = lpp1  ! beam 1 type (0=NO PDF)
-       1     = lpp2  ! beam 2 type (0=NO PDF)
-    6500     = ebeam1  ! beam 1 energy in GeV
-    6500     = ebeam2  ! beam 2 energy in GeV
+        #*********************************************************************
+        # Number of events and rnd seed                                      *
+        #*********************************************************************
+            800000   = nevents ! Number of unweighted events requested 
+            1234     = iseed   ! rnd seed (0=assigned automatically=default))
+        #*********************************************************************
+        # Collider type and energy                                           *
+        #*********************************************************************
+               1     = lpp1  ! beam 1 type (0=NO PDF)
+               1     = lpp2  ! beam 2 type (0=NO PDF)
+            6500     = ebeam1  ! beam 1 energy in GeV
+            6500     = ebeam2  ! beam 2 energy in GeV
 
 ### 2.2. Generate events with the process already set up
 
-cd pp_to_Higgs_HEFT_Model/bin
+`cd pp_to_Higgs_HEFT_Model/bin`
 
-./generate_events
+`./generate_events`
 
 This program asks 2 questions:
 
-> Enter 2 for multi-core, 1 for parallel, 0 for serial run
-0
-Enter run name
-ggToHiggs_mH_125_13TeV_madgraph452_events80k
+        Enter 2 for multi-core, 1 for parallel, 0 for serial run
+        0
+        Enter run name
+        ggToHiggs_mH_125_13TeV_madgraph452_events80k
 
-Generated events are stored in file MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz
+Generated events are stored in file `MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe.gz`.
 
 Unzip this LHE file with generated <b>unweighted</b> events, it will be used in next steps:
 
-cd MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events
+`cd MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events`
 
-unzip ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz
+`unzip ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe.gz`
 
 Repeat generation for other masses of Higgs. Suggested run names:
 
-ggToHiggs_mH_090_13TeV_madgraph452_events80k
-<br>ggToHiggs_mH_100_13TeV_madgraph452_events80k
-<br>ggToHiggs_mH_110_13TeV_madgraph452_events80k
-<br>ggToHiggs_mH_125_13TeV_madgraph452_events80k
-<br>ggToHiggs_mH_150_13TeV_madgraph452_events80k
+        ggToHiggs_mH_090_13TeV_madgraph452_events80k
+        ggToHiggs_mH_100_13TeV_madgraph452_events80k
+        ggToHiggs_mH_110_13TeV_madgraph452_events80k
+        ggToHiggs_mH_125_13TeV_madgraph452_events80k
+        ggToHiggs_mH_150_13TeV_madgraph452_events80k
 
 ## 3. Create custom Dark SUSY model
 
-In our example Higgs decays into two neutralinos n2 that decay into dark neutralino n1 (LSP) and dark photon zd. Dark photon decays into two muons.
+In our example Higgs decays into two neutralinos `n2` that decay into dark neutralino `n1` (LSP) and dark photon `zd`. Dark photon decays into two muons.
 
 ### 3.1. Create template for the model
 
-Copy folder MG_ME_V4.5.2/Models/usrmod with custom user model to new folder:
+Copy folder `MG_ME_V4.5.2/Models/usrmod` with custom model template to new folder:
 
-cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125
+`cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125`
 
 ### 3.2. Define model's particles
 
-Edit Models/usrmod_DarkSusy_mH_125/particles.dat:
+Edit `Models/usrmod_DarkSusy_mH_125/particles.dat`:
 
->  #MODEL EXTENSION
-n1      n1        F        S      MN1   WN1     S    n1   3000001
-n2      n2        F        S      MN2   WN2     S    n2   3000002
-zd      zd        V        W      MZD   WZD     S    zd   3000022
-mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013
-# END
+        #MODEL EXTENSION
+        n1      n1        F        S      MN1   WN1     S    n1   3000001
+        n2      n2        F        S      MN2   WN2     S    n2   3000002
+        zd      zd        V        W      MZD   WZD     S    zd   3000022
+        mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013
+        # END
 
-NOTE: Muon with new code 3000013 to make it massive
+NOTE: Muon with new code `3000013` to make it massive
 
 ### 3.3. Define model's interactions
 
