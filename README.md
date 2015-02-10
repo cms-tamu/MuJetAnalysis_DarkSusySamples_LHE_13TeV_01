@@ -48,40 +48,40 @@ NOTE: Don't forget to specify choice of model. In our test case it is <code>heft
 
 <code>./newprocess</code>
 
-NOTE: this will replace the file <code>pp_to_Higgs_HEFT_Model/Cards/param_card.dat</code> by the default <code>param_card.dat</code> for the model. In our case model is <code>"heft"</code>, so the original file is <code>MG_ME_V4.5.2/Models/heft/param_card.dat</code> that is the same as in <code>"sm"</code> (Standard Model) <code>param_card.dat</code>
+NOTE: this will replace the file <code>pp_to_Higgs_HEFT_Model/Cards/param_card.dat</code> by the original <code>param_card.dat</code> for the model. In our case model is <code>"heft"</code>, so the original file is <code>MG_ME_V4.5.2/Models/heft/param_card.dat</code>.
 
-### 1.7. Check that the specified process is set
+### 1.7. Check the specified process
 
-Use your web browser, by looking at index.html in the pp_to_Higgs_HEFT_Model folder:
+Use your web browser, by looking at <code>index.html</code> in the <code>pp_to_Higgs_HEFT_Model folder</code>:
 
-firefox pp_to_Higgs_HEFT_Model/index.html
+<code>firefox pp_to_Higgs_HEFT_Model/index.html</code>
 
 ### 1.8. Specify the model parameters
 
-The model parameters include masses and widths for particles and coupling constants. They are defined in file param_card.dat in the MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Cards folder.
+The model parameters include masses and widths for particles and coupling constants. They are defined in file <code>param_card.dat</code> in the <code>MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Cards</code> folder.
 
-In our case adjust mass of Higgs to 125 GeV
+In our case adjust mass of Higgs to 125 GeV:
 
-   25     1.25000000E+02   # H        mass
+> <code>25     1.25000000E+02   # H        mass</code>
 
 ## 2. Generate events with Madgraph
 
-### 2.1. Set beam type to protons, beam energy (6.5 TeV in this example), number of events and random seed
+### 2.1. Set generation parameters
 
-Edit pp_to_Higgs_HEFT_Model/Cards/run_card.dat
+Set beam type to protons, beam energy (6.5 TeV in this example), number of events and random seed in the file <code>pp_to_Higgs_HEFT_Model/Cards/run_card.dat</code>:
 
- #*********************************************************************
- # Number of events and rnd seed                                      *
- #*********************************************************************
-     800000   = nevents ! Number of unweighted events requested 
-     1234     = iseed   ! rnd seed (0=assigned automatically=default))
- #*********************************************************************
- # Collider type and energy                                           *
- #*********************************************************************
-        1     = lpp1  ! beam 1 type (0=NO PDF)
-        1     = lpp2  ! beam 2 type (0=NO PDF)
-     6500     = ebeam1  ! beam 1 energy in GeV
-     6500     = ebeam2  ! beam 2 energy in GeV
+> <code> #*********************************************************************
+> <br><code> # Number of events and rnd seed                                      *
+> <br><code> #*********************************************************************
+> <br><code>     800000   = nevents ! Number of unweighted events requested 
+> <br><code>     1234     = iseed   ! rnd seed (0=assigned automatically=default))
+> <br><code> #*********************************************************************
+> <br><code> # Collider type and energy                                           *
+> <br><code> #*********************************************************************
+> <br><code>        1     = lpp1  ! beam 1 type (0=NO PDF)
+> <br><code>        1     = lpp2  ! beam 2 type (0=NO PDF)
+> <br><code>     6500     = ebeam1  ! beam 1 energy in GeV
+> <br><code>     6500     = ebeam2  ! beam 2 energy in GeV
 
 ### 2.2. Generate events with the process already set up
 
