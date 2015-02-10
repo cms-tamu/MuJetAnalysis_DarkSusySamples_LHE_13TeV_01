@@ -273,11 +273,11 @@ Which mode? 2
 
 NOTE: In this test example we want to decay particles to mu+mu- final states according to branching ratios.
 
-''
+<code>
 Enter a final-state particle name, or "END" to finish: mu1+
 Enter a final-state particle name, or "END" to finish: mu1-
 Enter a final-state particle name, or "END" to finish: END
-''
+</code>
 
 Would you like to save the list of final-state particles? (Y/N) Y
 What file name do you want to save to?
