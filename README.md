@@ -233,7 +233,7 @@ The program asks a few following questions:
 > <br><code> Do you wish to replace the values of the param_card.dat widths, with the values stored in slha.out?(Y/N) y</code>
 > <br><code> Do you wish to keep a copy of the old param_card.dat?(Y/N) y</code>
 
-NOTE: the file 'param_card.dat' was updated with new decay widths:
+NOTE: the file `param_card.dat` was updated with new decay widths:
 
         DECAY        25   4.77997464e-06   # h decays
         #          BR         NDA      ID1       ID2
