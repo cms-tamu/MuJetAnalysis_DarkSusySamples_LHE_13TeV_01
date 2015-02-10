@@ -247,6 +247,18 @@ NOTE: the file <code>param_card.dat</code> was updated with new decay widths:
 > <br><code> #          BR         NDA      ID1       ID2</code>
 > <br><code>      1.00000000e+00    2     3000013  -3000013   # BR(zd -> mu1- mu1+ )</code>
 
+    DECAY        25   4.77997464e-06   # h decays
+    #          BR         NDA      ID1       ID2
+         1.00000000e+00    2     3000002   3000002   # BR(h -> n2 n2 )
+    #
+    DECAY   3000002   1.20714630e-04   # n2 decays
+    #          BR         NDA      ID1       ID2
+         1.00000000e+00    2     3000001   3000022   # BR(n2 -> n1 zd )
+    #
+    DECAY   3000022   1.02272608e-08   # zd decays
+    #          BR         NDA      ID1       ID2
+         1.00000000e+00    2     3000013  -3000013   # BR(zd -> mu1- mu1+ )
+
 ## 5. Decay events generated in step 2 within this custom model
 
 ### 5.1. Run BRIDGE
