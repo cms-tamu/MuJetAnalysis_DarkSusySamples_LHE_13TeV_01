@@ -122,7 +122,9 @@ Copy folder <code>MG_ME_V4.5.2/Models/usrmod</code> with custom user model to ne
 
 <code>cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125</code>
 
-### 3.2. Edit Models/usrmod_DarkSusy_mH_125/particles.dat
+### 3.2. Define model's particles
+
+Edit <code>Models/usrmod_DarkSusy_mH_125/particles.dat</code>:
 
 > <code> #MODEL EXTENSION</code>
 > <br><code> n1      n1        F        S      MN1   WN1     S    n1   3000001</code>
@@ -133,62 +135,70 @@ Copy folder <code>MG_ME_V4.5.2/Models/usrmod</code> with custom user model to ne
 
 NOTE: Muon with new code <code>3000013</code> to make it massive
 
-3.3. Edit Models/usrmod_DarkSusy_mH_125/interaction.dat
+### 3.3. Define model's interactions
 
-Add new vertexes
+Edit <code>Models/usrmod_DarkSusy_mH_125/interaction.dat</code>.
 
- #   USRVertex
- n2   n2   h    GHN22   QED
- n2   n1   zd   GZDN12  QED
- mu1- mu1- zd   GZDL    QED
+Add new vertexes:
 
-Remove SM Higgs vertexes to exclude Higgs decays to SM particles
+> <code> #   USRVertex</code>
+> <br><code> n2   n2   h    GHN22   QED</code>
+> <br><code> n2   n1   zd   GZDN12  QED</code>
+> <br><code> mu1- mu1- zd   GZDL    QED</code>
 
- # FFS (Yukawa)
- #ta- ta- h GHTAU QED
- #b   b   h GHBOT QED
- #t   t   h GHTOP QED
+Remove SM Higgs vertexes to exclude Higgs decays to SM particles:
 
- #   VVS
- #w- w+ h  GWWH  QED
- #z  z  h  GZZH  QED
+> <code> # FFS (Yukawa)</code>
+> <br><code> #ta- ta- h GHTAU QED</code>
+> <br><code> #b   b   h GHBOT QED</code>
+> <br><code> #t   t   h GHTOP QED</code>
 
-### 3.4. Run the shell script ./ConversionScript.pl
+> <code> #   VVS</code>
+> <br><code> #w- w+ h  GWWH  QED</code>
+> <br><code> #z  z  h  GZZH  QED</code>
 
-### 3.5. Edit file Models/usrmod_DarkSusy_mH_125/couplings.f
+### 3.4. Convert model
 
-Change couplings from default "1" to some small number "0.001"
+Run the shell script <code>./ConversionScript.pl</code>
 
-c************************************
-c UserMode couplings
-c************************************
-      GHN22(1)=dcmplx(1d-3,Zero)
-      GHN22(2)=dcmplx(1d-3,Zero)
-      GZDN12(1)=dcmplx(1d-3,Zero)
-      GZDN12(2)=dcmplx(1d-3,Zero)
-      GZDL(1)=dcmplx(1d-3,Zero)
-      GZDL(2)=dcmplx(1d-3,Zero)
+### 3.5. Redefine model's couplings
 
-### 3.6. Edit file Models/usrmod_DarkSusy_mH_125/param_card.dat
+Edit file <code>Models/usrmod_DarkSusy_mH_125/couplings.f</code>.
 
-Adjust mass of Higgs to 125 GeV, mass of n2 to 10 GeV, mass of n1 to 1 GeV, mass of zd to 400 MeV, mass of mu1 to 105 MeV
-Set widths of stable particles n1 and mu1 set to 0
-Set Higgs width to 1 and remove branchings to SM particles
+Change couplings from default <code>1</code> to some small number <code>0.001</code> (narrow width approximation).
 
-        25     1.25000000E+02   # H        mass
-   3000001     1.00000000e+00   # MN1
-   3000002     1.00000000e+01   # MN2
-   3000022     4.00000000e-01   # MZD
-   3000013     1.05000000e-01   # MMU1
-#            PDG       Width
-DECAY   3000001     0.00000000e+00   # WN1
-DECAY   3000002     1.00000000e+00   # WN2
-DECAY   3000022     1.00000000e+00   # WZD
-DECAY   3000013     0.00000000e+00   # WMU1
-DECAY         6     1.51013490E+00   # top width
-DECAY        23     2.44639985E+00   # Z   width
-DECAY        24     2.03535570E+00   # W   width
-DECAY        25     1.00000000e+00   # H   width
+> <code>c************************************</code>
+> <br><code>c UserMode couplings</code>
+> <br><code>c************************************</code>
+> <br><code>      GHN22(1)=dcmplx(1d-3,Zero)</code>
+> <br><code>      GHN22(2)=dcmplx(1d-3,Zero)</code>
+> <br><code>      GZDN12(1)=dcmplx(1d-3,Zero)</code>
+> <br><code>      GZDN12(2)=dcmplx(1d-3,Zero)</code>
+> <br><code>      GZDL(1)=dcmplx(1d-3,Zero)</code>
+> <br><code>      GZDL(2)=dcmplx(1d-3,Zero)</code>
+
+### 3.6. Re-define particles' masses and decay widths
+
+Edit file <code>Models/usrmod_DarkSusy_mH_125/param_card.dat</code>
+
+1. Adjust mass of Higgs to 125 GeV, mass of n2 to 10 GeV, mass of n1 to 1 GeV, mass of zd to 400 MeV, mass of mu1 to 105 MeV
+2. Set widths of stable particles n1 and mu1 set to 0
+3. Set Higgs width to 1 and remove branchings to SM particles
+
+> <code>        25     <b>1.25000000E+02</b>   # H        mass</code>
+> <br><code>   3000001     1.00000000e+00   # MN1</code>
+> <br><code>   3000002     1.00000000e+01   # MN2</code>
+> <br><code>   3000022     4.00000000e-01   # MZD</code>
+> <br><code>   3000013     1.05000000e-01   # MMU1</code>
+> <br><code>#            PDG       Width</code>
+> <br><code>DECAY   3000001     0.00000000e+00   # WN1</code>
+> <br><code>DECAY   3000002     1.00000000e+00   # WN2</code>
+> <br><code>DECAY   3000022     1.00000000e+00   # WZD</code>
+> <br><code>DECAY   3000013     0.00000000e+00   # WMU1</code>
+> <br><code>DECAY         6     1.51013490E+00   # top width</code>
+> <br><code>DECAY        23     2.44639985E+00   # Z   width</code>
+> <br><code>DECAY        24     2.03535570E+00   # W   width</code>
+> <br><code>DECAY        25     1.00000000e+00   # H   width</code>
 
 ### 3.7. Compile model and run
 
