@@ -200,62 +200,52 @@ Edit file <code>Models/usrmod_DarkSusy_mH_125/param_card.dat</code>
 > <br><code>DECAY        24     2.03535570E+00   # W   width</code>
 > <br><code>DECAY        25     <b>1.00000000e+00</b>   # H   width</code>
 
-### 3.7. Compile model and run
+### 3.7. Compile model's couplings and run
 
-make couplings
-./couplings
+<code>make couplings</code>
 
-## 4. Compute decay widths (and branching ratios) for our custom model with BRIDGE
+<code>./couplings</code>
+
+## 4. Define decay table using BRIDGE
 
 ### 4.1. Go to the BRIDGE folder:
 
-cd MG_ME_V4.5.2/BRIDGE
+<code>cd MG_ME_V4.5.2/BRIDGE</code>
 
 ### 4.2. Run BRIDGE
 
-./runBRI.exe
+<code>./runBRI.exe</code>
 
 The program asks a few following questions:
 
-Would you like to run from a MadGraph Model directory? (Y/N): Y
+> <code> Would you like to run from a MadGraph Model directory? (Y/N): Y</code>
+> <br><code> What is the name of the model directory(assuming that it is a subdirectory of Models/): usrmod_DarkSusy_mH_125</code>
+> <br><code> Do you wish to generate decay tables for all particles listed above or a subset?(type 1 for all, 2 for subset): 2</code>
+> <br><code> Please enter particles you wish to create decay tables for, you must explicitly enter antiparticles if you want BRI to generate their decay tables, otherwise use antigrids.pl: (type 'done' when finished):</code>
+> <br><code> h</code>
+> <br><code> n2</code>
+> <br><code> zd</code>
+> <br><code> done</code>
+> <br><code> Please enter a random number seed or write 'time' to use the time: 1234</code>
+> <br><code> The default number of Vegas calls is 50000. Would you like to change this? (Y/N) n</code>
+> <br><code> The default max. number of Vegas iterations is 5. Would you like to change this? (Y/N) n</code>
+> <br><code> Would you like to calculate three-body widths even for particles with open 2-body channels? (Y/N) n</code>
+> <br><code> Do you wish to replace the values of the param_card.dat widths, with the values stored in slha.out?(Y/N) y</code>
+> <br><code> Do you wish to keep a copy of the old param_card.dat?(Y/N) y</code>
 
-What is the name of the model directory(assuming that it is a subdirectory of Models/):
+NOTE: the file <code>param_card.dat</code> was updated with new decay widths:
 
-usrmod_DarkSusy_mH_125
-
-Do you wish to generate decay tables for all particles listed above or a subset?(type 1 for all, 2 for subset): 2
-
-Please enter particles you wish to create decay tables for, you must explicitly enter antiparticles if you want BRI to generate their decay tables, otherwise use antigrids.pl: (type 'done' when finished):
-h
-n2
-zd
-done
-
-Please enter a random number seed or write 'time' to use the time: 1234
-
-The default number of Vegas calls is 50000. Would you like to change this? (Y/N) n
-
-The default max. number of Vegas iterations is 5. Would you like to change this? (Y/N) n
-
-Would you like to calculate three-body widths even for particles with open 2-body channels? (Y/N) n
-
-Do you wish to replace the values of the param_card.dat widths, with the values stored in slha.out?(Y/N) y
-
-Do you wish to keep a copy of the old param_card.dat?(Y/N) y
-
-NOTE: param_card.dat was updated with new decay widths:
-
- DECAY        25   4.77997464e-06   # h decays
- #          BR         NDA      ID1       ID2
-      1.00000000e+00    2     3000002   3000002   # BR(h -> n2 n2 )
- #
- DECAY   3000002   1.20714630e-04   # n2 decays
- #          BR         NDA      ID1       ID2
-      1.00000000e+00    2     3000001   3000022   # BR(n2 -> n1 zd )
- #
- DECAY   3000022   1.02272608e-08   # zd decays
- #          BR         NDA      ID1       ID2
-      1.00000000e+00    2     3000013  -3000013   # BR(zd -> mu1- mu1+ )
+> <br><code> DECAY        25   4.77997464e-06   # h decays</code>
+> <br><code> #          BR         NDA      ID1       ID2</code>
+> <br><code>      1.00000000e+00    2     3000002   3000002   # BR(h -> n2 n2 )</code>
+> <br><code> #</code>
+> <br><code> DECAY   3000002   1.20714630e-04   # n2 decays</code>
+> <br><code> #          BR         NDA      ID1       ID2</code>
+> <br><code>      1.00000000e+00    2     3000001   3000022   # BR(n2 -> n1 zd )</code>
+> <br><code> #</code>
+> <br><code> DECAY   3000022   1.02272608e-08   # zd decays</code>
+> <br><code> #          BR         NDA      ID1       ID2</code>
+> <br><code>      1.00000000e+00    2     3000013  -3000013   # BR(zd -> mu1- mu1+ )</code>
 
 ## 5. Decay events generated in step 2 within this custom model
 
