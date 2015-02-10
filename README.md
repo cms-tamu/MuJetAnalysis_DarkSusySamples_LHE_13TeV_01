@@ -124,12 +124,12 @@ Copy folder <code>MG_ME_V4.5.2/Models/usrmod</code> with custom user model to ne
 
 ### 3.2. Edit Models/usrmod_DarkSusy_mH_125/particles.dat
 
-> <code> #MODEL EXTENSION
+> <code> #MODEL EXTENSION</code>
 > <br><code> n1      n1        F        S      MN1   WN1     S    n1   3000001</code>
 > <br><code> n2      n2        F        S      MN2   WN2     S    n2   3000002</code>
 > <br><code> zd      zd        V        W      MZD   WZD     S    zd   3000022</code>
 > <br><code> mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013</code>
-> <br><code> # END
+> <br><code> # END</code>
 
 NOTE: Muon with new code <code>3000013</code> to make it massive
 
