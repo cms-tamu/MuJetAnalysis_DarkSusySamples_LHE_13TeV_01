@@ -6,38 +6,39 @@
 
 ### 1.1. Download archive with pre-compiled Madgraph from github
 
-wget https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/MG_ME_V4.5.2_CompiledBackup/MG_ME_V4.5.2_CompiledBackup.tar.gz?raw=true -O MG_ME_V4.5.2_CompiledBackup.tar.gz
+<code>wget https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/MG_ME_V4.5.2_CompiledBackup/MG_ME_V4.5.2_CompiledBackup.tar.gz?raw=true -O MG_ME_V4.5.2_CompiledBackup.tar.gz</code>
 
 ### 1.2. unzip and rename it to MG_ME_V4.5.2
 
-tar -xzf MG_ME_V4.5.2_CompiledBackup.tar.gz
-mv MG_ME_V4.5.2_CompiledBackup MG_ME_V4.5.2
+<code>tar -xzf MG_ME_V4.5.2_CompiledBackup.tar.gz</code>
+
+<code>mv MG_ME_V4.5.2_CompiledBackup MG_ME_V4.5.2</code>
 
 ### 1.3. Go to Madgraph folder:
 
-cd MG_ME_V4.5.2
+<code>cd MG_ME_V4.5.2</code>
 
 ### 1.4. Copy the Template directory to directory with new name, for example pp_to_Higgs_HEFT_Model, in order to keep a clean copy of the Template:
 
-cp -r Template pp_to_Higgs_HEFT_Model
+<code>cp -r Template pp_to_Higgs_HEFT_Model</code>
 
-### 1.5. Set up process pp -> higgs through a top loop
+### 1.5. Set up process pp -> Higgs through a top loop
 
 See details in http://madgraph.hep.uiuc.edu/EXAMPLES/Cards/proc_card_4.dat on Madgraph web http://madgraph.hep.uiuc.edu/EXAMPLES/proc_card_examples.html
 
-Edit the file pp_to_Higgs_HEFT_Model/Cards/proc_card.dat:
+Edit the file <code>pp_to_Higgs_HEFT_Model/Cards/proc_card.dat</code>:
 
-pp>h  @1           # First Process
-QCD=99             # Max QCD couplings
-QED=0              # Max QED couplings
-HIG=1              # Max HIGGS EFT coupling: (now max is 1)
-end_coup           # End the couplings input
+<code>pp>h  @1           # First Process</code>
+<br><code>QCD=99             # Max QCD couplings</code>
+<br><code>QED=0              # Max QED couplings</code>
+<br><code>HIG=1              # Max HIGGS EFT coupling: (now max is 1)</code>
+<br><code>end_coup           # End the couplings input</code>
 
-Don't forget to specify choice of model. In our test case it is heft:
+NOTE: Don't forget to specify choice of model. In our test case it is heft:
 
- # Begin MODEL  # This is TAG. Do not modify this line
- heft
- # End   MODEL  # This is TAG. Do not modify this line
+<code># Begin MODEL  # This is TAG. Do not modify this line</code>
+<br><code>heft</code>
+<br><code># End   MODEL  # This is TAG. Do not modify this line</code>
 
 ### 1.6. Setup the specified process
 
