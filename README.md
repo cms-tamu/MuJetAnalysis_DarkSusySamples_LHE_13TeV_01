@@ -114,7 +114,7 @@ Repeat generation for other masses of Higgs. Suggested run names:
 
 ## 3. Create custom Dark SUSY model
 
-In our example Higgs decays into two neutralinos `n2` that decay into dark neutralino `n1` (LSP) and dark photon `zd`. Dark photon decays into two muons.
+In our example Higgs decays into two neutralinos `n2` that decay into dark neutralino `n1` (LSP) and dark photon `zd`. Dark photon decays into two muons `mu1`.
 
 ### 3.1. Create template for the model
 
@@ -133,7 +133,7 @@ Edit `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/particles.dat`:
         mu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013
         # END
 
-NOTE: Muon with new code `3000013` to make it massive
+NOTE: Muon `mu1` has new code `3000013` to make it massive (defualt muon `mu` in Madgraph is massless).
 
 ### 3.3. Define model's interactions
 
