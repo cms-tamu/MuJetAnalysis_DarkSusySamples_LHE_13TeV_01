@@ -52,7 +52,7 @@ NOTE: this will replace the file `pp_to_Higgs_HEFT_Model/Cards/param_card.dat` b
 
 ### 1.7. Check the specified process
 
-Use your web browser, by looking at `index.html` in the `pp_to_Higgs_HEFT_Model` folder:
+Use your web browser, by looking at `index.html` in the `pp_to_Higgs_HEFT_Model` folder, e.g.:
 
 `firefox pp_to_Higgs_HEFT_Model/index.html`
 
@@ -120,11 +120,11 @@ In our example Higgs decays into two neutralinos `n2` that decay into dark neutr
 
 Copy folder `MG_ME_V4.5.2/Models/usrmod` with custom model template to new folder:
 
-`cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125`
+`cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125_mGammaD_0400`
 
 ### 3.2. Define model's particles
 
-Edit `Models/usrmod_DarkSusy_mH_125/particles.dat`:
+Edit `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/particles.dat`:
 
         #MODEL EXTENSION
         n1      n1        F        S      MN1   WN1     S    n1   3000001
@@ -137,11 +137,11 @@ NOTE: Muon with new code `3000013` to make it massive
 
 ### 3.3. Define model's interactions
 
-Edit `Models/usrmod_DarkSusy_mH_125/interaction.dat`.
+Edit `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/interaction.dat`.
 
 Add new vertexes:
 
-        #   USRVertex
+        # USRVertex
         n2   n2   h    GHN22   QED
         n2   n1   zd   GZDN12  QED
         mu1- mu1- zd   GZDL    QED
@@ -153,7 +153,7 @@ Remove SM Higgs vertexes to exclude Higgs decays to SM particles:
         #b   b   h GHBOT QED
         #t   t   h GHTOP QED
 
-        #   VVS
+        # VVS
         #w- w+ h  GWWH  QED
         #z  z  h  GZZH  QED
 
@@ -163,7 +163,7 @@ Run the shell script `./ConversionScript.pl`
 
 ### 3.5. Redefine model's couplings
 
-Edit file `Models/usrmod_DarkSusy_mH_125/couplings.f`.
+Edit file `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/couplings.f`.
 
 Change couplings from default `1` to some small number `0.001` (narrow width approximation):
 
@@ -179,7 +179,7 @@ Change couplings from default `1` to some small number `0.001` (narrow width app
 
 ### 3.6. Re-define particles' masses and decay widths
 
-Edit file `Models/usrmod_DarkSusy_mH_125/param_card.dat`:
+Edit file `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/param_card.dat`:
 
 1. Adjust mass of Higgs to 125 GeV, mass of n2 to 10 GeV, mass of n1 to 1 GeV, mass of zd to 400 MeV, mass of mu1 to 105 MeV
 2. Set widths of stable particles n1 and mu1 set to 0
@@ -220,7 +220,7 @@ The program asks a few following questions:
 
         Would you like to run from a MadGraph Model directory? (Y/N): Y
         
-        What is the name of the model directory(assuming that it is a subdirectory of Models/): usrmod_DarkSusy_mH_125
+        What is the name of the model directory(assuming that it is a subdirectory of Models/): usrmod_DarkSusy_mH_125_mGammaD_0400
         
         Do you wish to generate decay tables for all particles listed above or a subset?(type 1 for all, 2 for subset): 2
         
@@ -267,7 +267,7 @@ The program asks a few following questions:
         Would you like to run from a MadGraph Model directory? (Y/N) Y
         
         What is the name of the model directory(assuming that it is a subdirectory of Models/):
-             usrmod_DarkSusy_mH_125
+             usrmod_DarkSusy_mH_125_mGammaD_0400
         
         What is the name of the input event file(include path if directory is different from where DGE is running)?
              [FUL PATH]/MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe
