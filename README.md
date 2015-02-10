@@ -185,7 +185,7 @@ Edit file <code>Models/usrmod_DarkSusy_mH_125/param_card.dat</code>
 2. Set widths of stable particles n1 and mu1 set to 0
 3. Set Higgs width to 1 and remove branchings to SM particles
 
-> <code>        25     <b>1.25000000E+02</b>   # H        mass</code>
+> <code>        25     <font color="red">1.25000000E+02</font>   # H        mass</code>
 > <br><code>   3000001     1.00000000e+00   # MN1</code>
 > <br><code>   3000002     1.00000000e+01   # MN2</code>
 > <br><code>   3000022     4.00000000e-01   # MZD</code>
