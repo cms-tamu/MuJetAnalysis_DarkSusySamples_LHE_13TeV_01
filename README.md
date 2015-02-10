@@ -276,9 +276,11 @@ NOTE: In this test example we want to decay particles to mu+mu- final states acc
 <code>
 Enter a final-state particle name, or "END" to finish: mu1+
 </code>
+
 <code>
 Enter a final-state particle name, or "END" to finish: mu1-
 </code>
+
 <code>
 Enter a final-state particle name, or "END" to finish: END
 </code>
