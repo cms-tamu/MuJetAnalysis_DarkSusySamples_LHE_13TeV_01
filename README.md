@@ -18,7 +18,9 @@
 
 <code>cd MG_ME_V4.5.2</code>
 
-### 1.4. Copy the Template directory to directory with new name, for example pp_to_Higgs_HEFT_Model, in order to keep a clean copy of the Template:
+### 1.4. Create template of the process
+
+Copy the <code>Template</code> directory to directory with new name, for example <code>pp_to_Higgs_HEFT_Model</code>, in order to keep a clean copy of the <code>Template</code>:
 
 <code>cp -r Template pp_to_Higgs_HEFT_Model</code>
 
