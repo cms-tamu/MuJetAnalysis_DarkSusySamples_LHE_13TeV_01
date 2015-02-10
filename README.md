@@ -2,13 +2,13 @@
 
 # Instructions
 
-## 1. Set new process with Madgraph
+## 1. Set up new process with Madgraph
 
 ### 1.1. Download archive with pre-compiled Madgraph from github
 
 <code>wget https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/MG_ME_V4.5.2_CompiledBackup/MG_ME_V4.5.2_CompiledBackup.tar.gz?raw=true -O MG_ME_V4.5.2_CompiledBackup.tar.gz</code>
 
-### 1.2. unzip and rename it to MG_ME_V4.5.2
+### 1.2. Unzip and rename it to MG_ME_V4.5.2
 
 <code>tar -xzf MG_ME_V4.5.2_CompiledBackup.tar.gz</code>
 
@@ -18,7 +18,7 @@
 
 <code>cd MG_ME_V4.5.2</code>
 
-### 1.4. Create template of the process
+### 1.4. Create template for the process
 
 Copy the <code>Template</code> directory to directory with new name, for example <code>pp_to_Higgs_HEFT_Model</code>, in order to keep a clean copy of the <code>Template</code>:
 
@@ -30,11 +30,11 @@ See details in http://madgraph.hep.uiuc.edu/EXAMPLES/Cards/proc_card_4.dat on Ma
 
 Edit the file <code>pp_to_Higgs_HEFT_Model/Cards/proc_card.dat</code>:
 
-<code>pp>h  @1           # First Process</code>
-<br><code>QCD=99             # Max QCD couplings</code>
-<br><code>QED=0              # Max QED couplings</code>
-<br><code>HIG=1              # Max HIGGS EFT coupling: (now max is 1)</code>
-<br><code>end_coup           # End the couplings input</code>
+> <code>pp>h  @1           # First Process</code>
+> <code>QCD=99             # Max QCD couplings</code>
+> <code>QED=0              # Max QED couplings</code>
+> <code>HIG=1              # Max HIGGS EFT coupling: (now max is 1)</code>
+> <code>end_coup           # End the couplings input</code>
 
 NOTE: Don't forget to specify choice of model. In our test case it is heft:
 
@@ -44,10 +44,11 @@ NOTE: Don't forget to specify choice of model. In our test case it is heft:
 
 ### 1.6. Setup the specified process
 
-cd pp_to_Higgs_HEFT_Model/bin
-./newprocess
+<code>cd pp_to_Higgs_HEFT_Model/bin</code>
 
-NOTE: this will replace the file pp_to_Higgs_HEFT_Model/Cards/param_card.dat by the default param_card.dat for the model. In our case model is "heft", so the original file is MG_ME_V4.5.2/Models/heft/param_card.dat that is the same as in "sm" (Standard Model) param_card.dat
+<code>./newprocess</code>
+
+NOTE: this will replace the file <code>pp_to_Higgs_HEFT_Model/Cards/param_card.dat</code> by the default <code>param_card.dat</code> for the model. In our case model is <code>"heft"</code>, so the original file is <code>MG_ME_V4.5.2/Models/heft/param_card.dat</code> that is the same as in <code>"sm"</code> (Standard Model) <code>param_card.dat</code>
 
 ### 1.7. Check that the specified process is set
 
