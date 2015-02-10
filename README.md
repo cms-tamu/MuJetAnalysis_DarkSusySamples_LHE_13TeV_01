@@ -70,18 +70,18 @@ In our case adjust mass of Higgs to 125 GeV:
 
 Set beam type to protons, beam energy (6.5 TeV in this example), number of events and random seed in the file <code>pp_to_Higgs_HEFT_Model/Cards/run_card.dat</code>:
 
-> <code> #*********************************************************************
-> <br><code> # Number of events and rnd seed                                      *
-> <br><code> #*********************************************************************
-> <br><code>     800000   = nevents ! Number of unweighted events requested 
-> <br><code>     1234     = iseed   ! rnd seed (0=assigned automatically=default))
-> <br><code> #*********************************************************************
-> <br><code> # Collider type and energy                                           *
-> <br><code> #*********************************************************************
-> <br><code>        1     = lpp1  ! beam 1 type (0=NO PDF)
-> <br><code>        1     = lpp2  ! beam 2 type (0=NO PDF)
-> <br><code>     6500     = ebeam1  ! beam 1 energy in GeV
-> <br><code>     6500     = ebeam2  ! beam 2 energy in GeV
+> <code> #*********************************************************************</code>
+> <br><code> # Number of events and rnd seed                                      *</code>
+> <br><code> #*********************************************************************</code>
+> <br><code>     800000   = nevents ! Number of unweighted events requested </code>
+> <br><code>     1234     = iseed   ! rnd seed (0=assigned automatically=default))</code>
+> <br><code> #*********************************************************************</code>
+> <br><code> # Collider type and energy                                           *</code>
+> <br><code> #*********************************************************************</code>
+> <br><code>        1     = lpp1  ! beam 1 type (0=NO PDF)</code>
+> <br><code>        1     = lpp2  ! beam 2 type (0=NO PDF)</code>
+> <br><code>     6500     = ebeam1  ! beam 1 energy in GeV</code>
+> <br><code>     6500     = ebeam2  ! beam 2 energy in GeV</code>
 
 ### 2.2. Generate events with the process already set up
 
