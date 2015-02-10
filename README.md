@@ -64,7 +64,7 @@ In our case adjust mass of Higgs to 125 GeV:
 
 > <code>25     1.25000000E+02   # H        mass</code>
 
-## 2. Generate events with Madgraph
+## 2. Generate Higgs events with Madgraph
 
 ### 2.1. Set generation parameters
 
@@ -85,26 +85,32 @@ Set beam type to protons, beam energy (6.5 TeV in this example), number of event
 
 ### 2.2. Generate events with the process already set up
 
-cd pp_to_Higgs_HEFT_Model/bin
-./generate_events
+<code>cd pp_to_Higgs_HEFT_Model/bin</code>
+
+<code>./generate_events</code>
 
 This program asks 2 questions:
 
-Enter 2 for multi-core, 1 for parallel, 0 for serial run
-0
-Enter run name
-ggToHiggs_mH_125_13TeV_madgraph452_events80k
+> <code>Enter 2 for multi-core, 1 for parallel, 0 for serial run</code>
+> <br><code>0</code>
+> <br><code>Enter run name</code>
+> <br><code>ggToHiggs_mH_125_13TeV_madgraph452_events80k</code>
 
-Generated events are stored in file MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz
+Generated events are stored in file <code>MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz</code>
 
-Unzip this LHE file with generated _unweighted_ events, it will be used in next steps.
+Unzip this LHE file with generated <b>unweighted</b> events, it will be used in next steps.
+
+<code>cd MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events</code>
+
+<code>unzip ggToHiggs_mH_125_13TeV_madgraph452_unweighted_events.lhe.gz</code>
 
 Repeat generation for other masses of Higgs. Suggested run names:
-ggToHiggs_mH_090_13TeV_madgraph452_events80k
-ggToHiggs_mH_100_13TeV_madgraph452_events80k
-ggToHiggs_mH_110_13TeV_madgraph452_events80k
-ggToHiggs_mH_125_13TeV_madgraph452_events80k
-ggToHiggs_mH_150_13TeV_madgraph452_events80k
+
+<code>ggToHiggs_mH_090_13TeV_madgraph452_events80k</code>
+<br><code>ggToHiggs_mH_100_13TeV_madgraph452_events80k</code>
+<br><code>ggToHiggs_mH_110_13TeV_madgraph452_events80k</code>
+<br><code>ggToHiggs_mH_125_13TeV_madgraph452_events80k</code>
+<br><code>ggToHiggs_mH_150_13TeV_madgraph452_events80k</code>
 
 ## 3. Create custom Dark SUSY model
 
