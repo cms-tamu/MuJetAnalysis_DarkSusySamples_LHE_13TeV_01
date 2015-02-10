@@ -246,16 +246,16 @@ The program asks a few following questions:
 <code>Would you like to run from a MadGraph Model directory? (Y/N) Y</code>
 
 <code>What is the name of the model directory(assuming that it is a subdirectory of Models/):</code>
-<code>usrmod_DarkSusy_mH_125</code>
+<br><code>usrmod_DarkSusy_mH_125</code>
 
 <code>What is the name of the input event file(include path if directory is different from where DGE is running)?</code>
-<code>[FUL PATH]/MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe</code>
+<br><code>[FUL PATH]/MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events/ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe</code>
 
 <code>What is the name of the output event file(include path if directory is different from where DGE is running)?</code>
-<code>ggToHiggsTo2n1To2nD2aD_mH_125_13TeV_madgraph452_bridge224_events80k.lhe</code>
+<br><code>ggToHiggsTo2n1To2nD2aD_mH_125_13TeV_madgraph452_bridge224_events80k.lhe</code>
 
 <code>Please enter a random number seed or write 'time' to use the time</code>
-<code>12345/<code>
+<br><code>12345</code>
 
 <code>
 Choose a mode: 
