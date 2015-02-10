@@ -233,19 +233,7 @@ The program asks a few following questions:
 > <br><code> Do you wish to replace the values of the param_card.dat widths, with the values stored in slha.out?(Y/N) y</code>
 > <br><code> Do you wish to keep a copy of the old param_card.dat?(Y/N) y</code>
 
-NOTE: the file <code>param_card.dat</code> was updated with new decay widths:
-
-> <br><code> DECAY        25   4.77997464e-06   # h decays</code>
-> <br><code> #          BR         NDA      ID1       ID2</code>
-> <br><code>      1.00000000e+00    2     3000002   3000002   # BR(h -> n2 n2 )</code>
-> <br><code> #</code>
-> <br><code> DECAY   3000002   1.20714630e-04   # n2 decays</code>
-> <br><code> #          BR         NDA      ID1       ID2</code>
-> <br><code>      1.00000000e+00    2     3000001   3000022   # BR(n2 -> n1 zd )</code>
-> <br><code> #</code>
-> <br><code> DECAY   3000022   1.02272608e-08   # zd decays</code>
-> <br><code> #          BR         NDA      ID1       ID2</code>
-> <br><code>      1.00000000e+00    2     3000013  -3000013   # BR(zd -> mu1- mu1+ )</code>
+NOTE: the file 'param_card.dat' was updated with new decay widths:
 
         DECAY        25   4.77997464e-06   # h decays
         #          BR         NDA      ID1       ID2
