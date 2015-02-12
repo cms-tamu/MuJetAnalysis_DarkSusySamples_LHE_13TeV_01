@@ -102,7 +102,7 @@ Unzip this LHE file with generated <b>unweighted</b> events, it will be used in 
 
 `cd MG_ME_V4.5.2/pp_to_Higgs_HEFT_Model/Events`
 
-`unzip ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe.gz`
+`gunzip -d ggToHiggs_mH_125_13TeV_madgraph452_events80k_unweighted_events.lhe.gz`
 
 Repeat generation for other masses of Higgs. Suggested run names:
 
@@ -159,8 +159,14 @@ Remove SM Higgs vertexes to exclude Higgs decays to SM particles:
 
 ### 3.4. Convert model
 
+`cd Models/usrmod_DarkSusy_mH_125_mGammaD_0400/`
+
 Run the shell script `./ConversionScript.pl`
 
+The script asks a question:
+
+        Need to keep old couplings.f and param_card.dat? yes or no: yes
+        
 ### 3.5. Redefine model's couplings
 
 Edit file `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/couplings.f`.
@@ -301,3 +307,7 @@ NOTE: In this test example we want to decay particles to mu+mu- final states acc
 ### 5.2. Finally, we need to change our custom massive muon "mu1" to regular "mu".
 
 Just search for codes `3000013` and `-3000013` in event file `DarkSUSY_mH_125_mGammaD_2000_13TeV-madgraph452_bridge224_events80k.lhe` and replace them with codes `13` and `-13`, correspondingly.
+
+A simple way to do this is in vi:
+`vi DarkSUSY_mH_125_mGammaD_2000_13TeV-madgraph452_bridge224_events80k.lhe`
+`:%s/3000013 /13 /g`
