@@ -137,7 +137,7 @@ NOTE: Muon `mu1` has new code `3000013` to make it massive (defualt muon `mu` in
 
 ### 3.3. Define model's interactions
 
-Edit `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/interaction.dat`.
+Edit `Models/usrmod_DarkSusy_mH_125_mGammaD_0400/interactions.dat`.
 
 Add new vertexes:
 
