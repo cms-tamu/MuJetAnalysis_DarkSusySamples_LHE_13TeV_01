@@ -2,7 +2,7 @@
 
 #To run this script, you must already have MADGRAPH and set up the process pp->Higgs through a top loop by working through section 3 of https://github.com/cms-tamu/MuJetAnalysis_Samples_13TeV_01/blob/master/README.md .  You will also need to place replace_lifetime_in_LHE.py (https://github.com/cms-tamu/MuJetAnalysis/blob/master/GenProduction/python/replace_lifetime_in_LHE.py) in the BRIDGE directory.
 
-#You will also need to change the filepath on lines 30 and 137.
+#You will also need to change the filepath on lines 30 and 134.
 
 set timeout 86400
 
@@ -37,7 +37,6 @@ send "cp -r Models/usrmod Models/usrmod_DarkSusy_mH_125_mGammaD_$MASS\r"
 expect "$ "
 send "sed -i 's/#MODEL EXTENSION/#MODEL EXTENSION\\nn1      n1        F        S      MN1   WN1     S    n1   3000001\\nn2      n2        F        S      MN2   WN2     S    n2   3000002\\nzd      zd        V        W      MZD   WZD     S    zd   3000022\\nmu1-    mu1+      F        S      MMU1  WMU1    S    mu1  3000013\\n/g' Models/usrmod_DarkSusy_mH_125_mGammaD_$MASS/particles.dat\r"
 expect "$ "
-#Model interactions are also already defined
 send "cd Models/usrmod_DarkSusy_mH_125_mGammaD_$MASS\r"
 expect "$ "
 send "sed -i 's/#   USRVertex/#   USRVertex\\nn2   n2   h    GHN22   QED\\nn2   n1   zd   GZDN12  QED\\nmu1- mu1- zd   GZDL    QED/g' interactions.dat\r"
@@ -53,8 +52,6 @@ expect "$ "
 send "sed -i 's/z  z  h  GZZH  QED/#z  z  h  GZZH  QED/g' interactions.dat\r"
 expect "$ "
 #Redefine Model Couplings
-#send "cd Models/usrmod_DarkSusy_mH_125_mGammaD_$MASS\r"
-#expect "$ "
 send "./ConversionScript.pl\r"
 expect "Need to keep old couplings.f and param_card.dat? yes or no: "
 send "yes\r"
@@ -162,11 +159,6 @@ sleep 1
 send "sed -i '/filename =/c \\filename = \"DarkSUSY_mH_125_mGammaD_$MASS\_13TeV-madgraph452_bridge224_events80k.lhe\"' replace_lifetime_in_LHE.py\r"
 expect "$ "
 sleep 1
-#send "sed -i 's/ctau_mean_mm = 5.0/ctau_mean_mm = 0/g' replace_lifetime_in_LHE.py\r"
-#expect "$ "
-#send "python replace_lifetime_in_LHE.py > DarkSUSY_mH_125_mGammaD_$MASS\_13TeV_cT_000_madgraph452_bridge224_events80k.lhe\r"
-#expect "$ "
-
 send "sed -i 's/ctau_mean_mm = 5.0/ctau_mean_mm = 0.05/g' replace_lifetime_in_LHE.py\r"
 expect "$ "
 send "python replace_lifetime_in_LHE.py > DarkSUSY_mH_125_mGammaD_$MASS\_13TeV_cT_005_madgraph452_bridge224_events80k.lhe\r"
